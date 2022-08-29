@@ -12,6 +12,12 @@
   "license": "ISC",
   "devDependencies": {
     "@types/node": "^18.7.13",
+    "@types/prettier": "^2.7.0",
     "typescript": "^4.8.2"
+  },
+  "dependencies": {
+    "@babel/parser": "^7.18.13",
+    "commander": "^9.4.0",
+    "prettier": "^2.7.1"
   }
 }
