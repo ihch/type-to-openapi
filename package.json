@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "generate": "npx tsc src/index.ts && node src/index.js",
+    "generate": "npx tsc src/command.ts src/index.ts && node src/command.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
