@@ -1,10 +1,4 @@
-import * as fs from 'fs';
-import * as path from 'path';
 import * as typescript from 'typescript';
-
-const src = fs.readFileSync(path.resolve('./src/types.ts'), { encoding: 'utf-8' });
-
-const source = typescript.createSourceFile('', src, typescript.ScriptTarget.ES2020)
 
 const openapiComponents = {
   components: {
@@ -74,6 +68,8 @@ const f = (node: typescript.Node) => {
   }
 }
 
-source.statements.forEach(f);
-
-console.log(JSON.stringify(openapiComponents));
+export function type2openapiSchemes(src: string): string {
+  const source = typescript.createSourceFile('', src, typescript.ScriptTarget.ES2020)
+  source.statements.forEach(f);
+  return JSON.stringify(openapiComponents);
+}
