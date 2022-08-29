@@ -4,8 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "generate": "npx tsc src/command.ts src/index.ts && node src/command.js",
+    "build": "npx tsc --outDir build src/*.ts",
+    "generate": "node bin/type2openapi.js",
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "type2openapi": "bin/type2openapi.js"
   },
   "keywords": [],
   "author": "",
