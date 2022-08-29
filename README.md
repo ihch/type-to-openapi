@@ -20,13 +20,14 @@ export type CommentResponse = {
 
 ```shell
 # input
-npm run generate
+npm run generate examples/types.ts -o schemes.json
 
 # output
-> type-to-openapi@1.0.0 generate
-> npx tsc src/index.ts && node src/index.js
 
-{"components":{"schemes":{"PingResponse":{"title":"PingResponse","required":["body","status"],"type":"object","properties":{"body":{"title":"PingResponse","type":"string"},"status":{"title":"PingResponse","type":["ok","ng",1]},"nullableParameter":{"title":"PingResponse","type":"string"}}},"CommentResponse":{"title":"CommentResponse","required":["text"],"type":"object","properties":{"text":{"title":"CommentResponse","type":"string"}}}}}}
+> type-to-openapi@1.0.0 generate
+> npx tsc src/command.ts src/index.ts && node src/command.js schemes.json
+
+Successfully generated to "schemes.json"
 ```
 
 出力 + フォーマットしたスキーマファイル
@@ -83,7 +84,6 @@ npm run generate
 
 ### TODO
 
-- 入力ファイルのパス指定ができない
 - 対応していない型がたくさん
 - 別で定義した型を参照したときに OpenAPI の Refs で引っ張ってくるようにする
 - GitHub の npm パッケージ化して使えるようにしたい
