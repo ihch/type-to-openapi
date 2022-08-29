@@ -1,8 +1,9 @@
 {
-  "name": "type-to-openapi",
+  "name": "@ihch/type-to-openapi",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "repository": "https://github.com/ihch/type-to-openapi.git",
   "scripts": {
     "build": "npx tsc --outDir build src/*.ts",
     "generate": "node bin/type2openapi.js",
@@ -12,7 +13,10 @@
     "type2openapi": "bin/type2openapi.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "ihch",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/ihch"
+  },
   "license": "ISC",
   "devDependencies": {
     "@types/node": "^18.7.13",
