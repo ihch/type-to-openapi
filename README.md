@@ -82,8 +82,15 @@ Successfully generated to "schemes.json"
 
 生成したファイルを使って OpenAPI の API 部分とかを作ると楽そう. それも自動化できないかな.
 
+### npm packageで利用する
+
+```shell
+npm i -D @ihch/type-to-openapi --registry=https://npm.pkg.github.com/ihch
+
+./node_modules/.bin/type2openapi types.ts
+```
+
 ### TODO
 
 - 対応していない型がたくさん
 - 別で定義した型を参照したときに OpenAPI の Refs で引っ張ってくるようにする
-- GitHub の npm パッケージ化して使えるようにしたい
